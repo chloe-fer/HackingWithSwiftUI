@@ -55,10 +55,7 @@ struct ContentView: View {
                         Button {
                             flagTapped(number)
                         } label: {
-                            Image(countries[number])
-                                .renderingMode(.original)
-                                .clipShape(Capsule())
-                                .shadow(radius: 5)
+                            FlagView(countryName: countries[number])
                         }
                     }
                 }
@@ -121,6 +118,21 @@ struct ContentView: View {
         questionNumber = 1
         score = 0
     }
+}
+
+// Day 24 - challenge 2: refactor code
+struct FlagView: View {
+    
+    var countryName: String
+    
+    var body: some View {
+        
+        Image(countryName)
+            .renderingMode(.original)
+            .clipShape(Capsule())
+            .shadow(radius: 5)
+    }
+
 }
 
 struct ContentView_Previews: PreviewProvider {
