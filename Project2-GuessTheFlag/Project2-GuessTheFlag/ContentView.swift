@@ -17,9 +17,13 @@ struct ContentView: View {
     @State private var score = 0
     @State private var scoreTitle = ""
     @State private var gameOver = false
-    
+        
     @State private var questionNumber = 1
     
+    @State private var rotationAmount = 0.0
+    @State private var opacityAmount = 1.0
+    @State private var scaleAmount = 1.0
+        
     var body: some View {
         
         ZStack {
@@ -53,10 +57,18 @@ struct ContentView: View {
                     
                     ForEach(0..<3) { number in
                         Button {
+                            
                             flagTapped(number)
+                            
                         } label: {
                             FlagView(countryName: countries[number])
                         }
+                        // Challenge 1:
+                        //.rotation3DEffect(.degrees(number == correctAnswer ? rotationAmount : 0.0), axis: (x: 0, y: 1, z: 0))
+                        // Challenge 2
+                        //.opacity(number == correctAnswer ? 1.0 : opacityAmount)
+                        // Challeng 3: 
+                        //.scaleEffect(scaleAmount)
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -92,11 +104,22 @@ struct ContentView: View {
     }
     
     func flagTapped(_ number: Int) {
+        
+
         if number == correctAnswer {
+            
+            withAnimation {
+                rotationAmount = 360
+                opacityAmount = 0.25
+                scaleAmount = 0.5
+            }
+            
             score += 1
             scoreTitle = "Correct"
+
         } else {
             score -= 1
+            opacityAmount = 0.0
             scoreTitle = "Incorrect, that is the flag of \(countries[number])"
         }
         
@@ -106,11 +129,14 @@ struct ContentView: View {
             showingScore = true
         }
         questionNumber += 1
-
+                
     }
     
     func askQuestion() {
         countries.shuffle()
+        opacityAmount = 1.0
+        rotationAmount = 0.0
+        scaleAmount = 1.0
         correctAnswer = Int.random(in: 0...2)
     }
     
