@@ -40,7 +40,6 @@ struct MissionView: View {
                         .padding(.bottom)
                         .foregroundColor(.white.opacity(0.5))
 
-
                     Text(mission.description)
                     
                     Divider()
