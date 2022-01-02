@@ -9,27 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var petalOffset = -20.0
-    @State private var petalWidth = 100.0
-    
     var body: some View {
       
-        VStack {
-            
-            Flower(petalOffset: petalOffset, petalWidth: petalWidth)
-                //.stroke(.red, lineWidth: 1)
-                .fill(.red, style: FillStyle(eoFill: true))
-            
-            Text("Offset")
-            Slider(value: $petalOffset, in: -40...40)
-                .padding([.horizontal, .bottom])
-            
-            Text("Width")
-            Slider(value: $petalWidth, in: 0...100)
-                .padding(.horizontal)
-        }
+//        Text("Drawing")
+//            .frame(width: 300, height: 300)
+//            //.background(.red)
+//            //.border(.red, width: 30)
+//            .border(ImagePaint(image: Image("alice"), sourceRect: CGRect(x: 0, y: 0.25, width: 0.5, height: 0.5), scale: 0.2), width: 30)
+        
+        Capsule()
+            .strokeBorder(ImagePaint(image: Image("alice"), scale: 0.1), lineWidth: 20)
+            .frame(width: 300, height: 200)
     }
-    
     
 }
 
