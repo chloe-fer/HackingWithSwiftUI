@@ -8,26 +8,69 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var petalOffset = -20.0
+    @State private var petalWidth = 100.0
+    
     var body: some View {
       
-//        Triangle()
-//            //.fill(.red)
-//            .stroke(.red, style: StrokeStyle(lineWidth: 10, lineCap: .round, lineJoin: .round))
-//            .frame(width: 300, height: 300)
-//
-//        Arc(startAngle: .degrees(0), endAngle: .degrees(110), clockwise: true)
-//            .stroke(.blue, lineWidth: 10)
-//            .frame(width: 300, height: 300)
-
-//        Circle()
-//            //.stroke(.blue, lineWidth: 40)
-//            .strokeBorder(.blue, lineWidth: 40)
-        
-        Arc(startAngle: .degrees(-90), endAngle: .degrees(90), clockwise: true)
-            .strokeBorder(.blue, lineWidth: 40)
-
+        VStack {
+            
+            Flower(petalOffset: petalOffset, petalWidth: petalWidth)
+                //.stroke(.red, lineWidth: 1)
+                .fill(.red, style: FillStyle(eoFill: true))
+            
+            Text("Offset")
+            Slider(value: $petalOffset, in: -40...40)
+                .padding([.horizontal, .bottom])
+            
+            Text("Width")
+            Slider(value: $petalWidth, in: 0...100)
+                .padding(.horizontal)
+        }
     }
     
+    
+}
+
+struct Flower: Shape {
+    
+    // how much to move petal from away from center
+    var petalOffset: Double = -20
+    
+    // how wide to make each petal
+    var petalWidth: Double = 100
+    
+    func path(in rect: CGRect) -> Path {
+        
+        // the path that holds all petals
+        var path = Path()
+        
+        // count from 0 to pi * 2, moveing up pi / 8 each time
+        for number in stride(from: 0, to: Double.pi * 2, by: Double.pi / 8) {
+            
+            // rotate the petal by the current value of our loop
+            let rotation = CGAffineTransform(rotationAngle: number)
+            
+            // move the petal to the center of our view
+            let position = rotation.concatenating(CGAffineTransform(translationX: rect.width / 2, y: rect.height / 2))
+            
+            // create a path for this petal using our properties plus a fixed Y and height
+            let originalPetal = Path(ellipseIn: CGRect(x: petalOffset, y: 0, width: petalWidth, height: rect.width / 2))
+            
+            // appy our rotation/position transformation to the petal
+            let rotatedPetal = originalPetal.applying(position)
+            
+            // add it to our main path
+            path.addPath(rotatedPetal)
+            
+        }
+        
+        // sent the main path back
+        return path
+    }
+    
+
     
 }
 
