@@ -9,18 +9,91 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @State private var rows = 4
-    @State private var columns = 4
+    //@State private var rows = 4
+    //@State private var columns = 4
     
+    @State private var lineWidth: CGFloat = 5.0
+    @State private var colorCycle = 0.0
+
     var body: some View {
       
-        CheckerBoard(rows: rows, columns: columns)
-            .onTapGesture {
-                withAnimation(.linear(duration: 3)) {
-                    rows = 8
-                    columns = 16
-                }
+        
+        VStack {
+                   
+            ColorCyclingRectangle(amount: colorCycle)
+                .frame(width: 300, height: 300)
+
+            Slider(value: $colorCycle)
+            
+        }
+        
+//        Arrow()
+//            .stroke(.red, style: StrokeStyle(lineWidth: lineWidth, lineCap: .round))
+//            .frame(width: 300, height: 300)
+//            // Challenge 2: make the line width animatable
+//            .onTapGesture {
+//                withAnimation {
+//                    lineWidth += 5.0
+//                }
+//            }
+        
+//        CheckerBoard(rows: rows, columns: columns)
+//            .onTapGesture {
+//                withAnimation(.linear(duration: 3)) {
+//                    rows = 8
+//                    columns = 16
+//                }
+//            }
+    }
+}
+
+// Challenge 1: create an arrow
+
+struct Arrow: Shape {
+    
+    func path(in rect: CGRect) -> Path {
+        
+        var path = Path()
+
+        path.move(to: CGPoint(x: rect.midX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.midY))
+        path.move(to: CGPoint(x: rect.midX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.midY))
+        path.move(to: CGPoint(x: rect.midX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.midX, y: rect.maxY))
+        
+        return path
+    }
+}
+
+struct ColorCyclingRectangle: View {
+    
+    var amount = 0.0
+    var steps = 100
+    
+    var body: some View {
+                
+        ZStack {
+                
+            ForEach(0..<steps) { value in
+                    
+                Rectangle()
+                    .inset(by: Double(value))
+                    .strokeBorder(color(for: value, brightness: 1), lineWidth: 2)
             }
+            
+        }
+    }
+    
+    func color(for value: Int, brightness: Double) -> Color {
+        
+        var targetHue = Double(value) / Double(steps) + amount
+
+        if targetHue > 1 {
+            targetHue -= 1
+        }
+
+        return Color(hue: targetHue, saturation: 1, brightness: brightness)
     }
 }
 
