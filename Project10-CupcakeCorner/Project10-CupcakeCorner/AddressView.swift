@@ -19,7 +19,7 @@ struct AddressView: View {
                 
                 TextField("Name", text: $order.name)
                 
-                TextField("Street address", text: $order.streetAdress)
+                TextField("Street address", text: $order.streetAddress)
                 
                 TextField("City", text: $order.city)
                 
