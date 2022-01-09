@@ -13,6 +13,7 @@
 		17BAC9F1278824F20023F520 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BAC9F0278824F20023F520 /* ContentView.swift */; };
 		17BAC9F3278824F50023F520 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17BAC9F2278824F50023F520 /* Assets.xcassets */; };
 		17BAC9F6278824F50023F520 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17BAC9F5278824F50023F520 /* Preview Assets.xcassets */; };
+		17D33A37278AA0CB003FB146 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D33A36278AA0CB003FB146 /* CheckoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		17BAC9F0278824F20023F520 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		17BAC9F2278824F50023F520 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17BAC9F5278824F50023F520 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		17D33A36278AA0CB003FB146 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				17BAC9EE278824F20023F520 /* Project10_CupcakeCornerApp.swift */,
 				17BAC9F0278824F20023F520 /* ContentView.swift */,
 				170D3697278994FE0072A0D2 /* AddressView.swift */,
+				17D33A36278AA0CB003FB146 /* CheckoutView.swift */,
 				170D36952789925B0072A0D2 /* Order.swift */,
 				17BAC9F2278824F50023F520 /* Assets.xcassets */,
 				17BAC9F4278824F50023F520 /* Preview Content */,
@@ -145,6 +148,7 @@
 			files = (
 				170D36962789925B0072A0D2 /* Order.swift in Sources */,
 				170D3698278994FE0072A0D2 /* AddressView.swift in Sources */,
+				17D33A37278AA0CB003FB146 /* CheckoutView.swift in Sources */,
 				17BAC9F1278824F20023F520 /* ContentView.swift in Sources */,
 				17BAC9EF278824F20023F520 /* Project10_CupcakeCornerApp.swift in Sources */,
 			);
