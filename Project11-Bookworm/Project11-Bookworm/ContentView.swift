@@ -11,7 +11,13 @@ struct ContentView: View {
     
     @Environment(\.managedObjectContext) var moc
     
-    @FetchRequest(sortDescriptors: []) var books: FetchedResults<Book>
+    @FetchRequest(sortDescriptors: [
+        
+        SortDescriptor(\.title),
+        SortDescriptor(\.author)
+        
+        // SortDescriptor(\.title, order: .reverse)
+    ]) var books: FetchedResults<Book>
     
     @State private var showingAddSreen = false
 
@@ -23,8 +29,11 @@ struct ContentView: View {
                 ForEach(books) { book in
                     
                     NavigationLink {
-                        Text(book.title ?? "Unknown Title")
+                        
+                        DetailView(book:book)
+                        
                     } label: {
+                        
                         HStack {
                             
                             EmojiRatingView(rating: book.rating)
