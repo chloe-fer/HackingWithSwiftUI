@@ -42,6 +42,8 @@ struct ContentView: View {
                             VStack(alignment: .leading) {
                                 Text(book.title ?? "Unknown Title")
                                     .font(.headline)
+                                    // Challenge 2: red title text for 1 star rating
+                                    .foregroundColor(book.rating == Int(1) ? .red : .black)
                                 Text(book.author ?? "Unknown Author")
                                     .foregroundColor(.secondary)
                             }
@@ -81,7 +83,7 @@ struct ContentView: View {
             // delte book from context
             moc.delete(book)
         }
-        //try? moc.save()
+        try? moc.save()
     }
 }
 

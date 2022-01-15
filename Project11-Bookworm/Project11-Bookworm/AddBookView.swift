@@ -16,8 +16,15 @@ struct AddBookView: View {
     @State private var title = ""
     @State private var author = ""
     @State private var rating = 3
-    @State private var genre = ""
+    @State private var genre = "Fantasy"
     @State private var review = ""
+    // Challenge 3: date added
+    @State private var date = Date.now
+    
+    // Challenge 1: validate form
+    var disableForm: Bool {
+        title.isEmpty || author.isEmpty
+    }
     
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
     
@@ -29,7 +36,7 @@ struct AddBookView: View {
                 
                 Section {
                     
-                    TextField("Book nmae", text: $title)
+                    TextField("Book name", text: $title)
                     TextField("Author's name", text: $author)
                     
                     Picker("Genre", selection: $genre) {
@@ -63,12 +70,15 @@ struct AddBookView: View {
                         newBook.rating = Int16(rating)
                         newBook.genre = genre
                         newBook.review = review
+                        newBook.date = date
                         
                         try? moc.save()
                         
                         dismiss()
                     }
                 }
+                .disabled(disableForm)
+
             }
             .navigationTitle("Add Book")
         }

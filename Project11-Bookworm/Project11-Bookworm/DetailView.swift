@@ -17,6 +17,15 @@ struct DetailView: View {
     
     @State private var showingDeleteAlert = false
     
+    // Challenge 3 - date added and formatted
+    
+    var formatDate: String {
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        return formatter.string(from: book.date ?? Date.now)
+    }
+    
     var body: some View {
         
         ScrollView {
@@ -41,6 +50,10 @@ struct DetailView: View {
             Text(book.author ?? "Unknown Author")
                 .font(.title)
                 .foregroundColor(.secondary)
+            
+            Text(formatDate)
+                .foregroundColor(.secondary)
+                
             
             Text(book.review ?? "Add a Review")
                 .padding()
@@ -86,6 +99,7 @@ struct DetailView_Previews: PreviewProvider {
             book.genre = "Fantasy"
             book.rating = 4
             book.review = "This was a great book; I really enjoyed it."
+            book.date = Date.now
 
             return NavigationView {
                 DetailView(book: book)
