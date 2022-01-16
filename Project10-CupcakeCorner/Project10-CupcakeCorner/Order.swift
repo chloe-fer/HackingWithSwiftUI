@@ -40,6 +40,16 @@ class Order: ObservableObject, Codable {
         if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty {
             return false
         }
+        if !zip.isNumeric || zip.count != 4 {
+            return false
+        }
+        if name.lettersOnly { //|| streetAddress.lettersOnly || city.lettersOnly {
+            return false
+        }
+        if name.whiteSpaceOnly || streetAddress.whiteSpaceOnly || city.whiteSpaceOnly {
+            return false
+        }
+            
         return true
     }
     
@@ -95,5 +105,26 @@ class Order: ObservableObject, Codable {
     }
     
     init() { }
+    
+}
+
+extension String {
+    
+    var isNumeric: Bool {
+        
+        return !(self.isEmpty) && self.allSatisfy { $0.isNumber }
+        
+    }
+    
+    var lettersOnly: Bool {
+        
+        return !(self.isEmpty) && self.allSatisfy { $0.isLetter }
+    }
+    
+    var whiteSpaceOnly: Bool {
+        
+        return !(self.isEmpty) && self.allSatisfy { $0.isWhitespace }
+    }
+    
     
 }
