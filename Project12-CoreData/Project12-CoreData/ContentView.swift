@@ -14,10 +14,16 @@ struct Student: Hashable {
 }
 
 struct ContentView: View {
+    
+    @Environment(\.managedObjectContext) var moc
 
     var body: some View {
         
-        Text("Core Data")
+        Button("Save") {
+            if moc.hasChanges {
+                try? moc.save()
+            }
+        }
     
     }
 }
