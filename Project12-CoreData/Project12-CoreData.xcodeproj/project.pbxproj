@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17CFE972279585B20064A754 /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFE970279585B20064A754 /* Movie+CoreDataClass.swift */; };
-		17CFE973279585B20064A754 /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CFE971279585B20064A754 /* Movie+CoreDataProperties.swift */; };
 		17E0F565279403EF00739A05 /* Project12_CoreDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E0F564279403EF00739A05 /* Project12_CoreDataApp.swift */; };
 		17E0F567279403EF00739A05 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E0F566279403EF00739A05 /* ContentView.swift */; };
 		17E0F569279403F200739A05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E0F568279403F200739A05 /* Assets.xcassets */; };
@@ -18,8 +16,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		17CFE970279585B20064A754 /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		17CFE971279585B20064A754 /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		17E0F561279403EF00739A05 /* Project12-CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project12-CoreData.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E0F564279403EF00739A05 /* Project12_CoreDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project12_CoreDataApp.swift; sourceTree = "<group>"; };
 		17E0F566279403EF00739A05 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,8 +55,6 @@
 		17E0F563279403EF00739A05 /* Project12-CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				17CFE970279585B20064A754 /* Movie+CoreDataClass.swift */,
-				17CFE971279585B20064A754 /* Movie+CoreDataProperties.swift */,
 				17E0F564279403EF00739A05 /* Project12_CoreDataApp.swift */,
 				17E0F566279403EF00739A05 /* ContentView.swift */,
 				17E0F5722794041C00739A05 /* DataController.swift */,
@@ -152,8 +146,6 @@
 				17E0F567279403EF00739A05 /* ContentView.swift in Sources */,
 				17E0F565279403EF00739A05 /* Project12_CoreDataApp.swift in Sources */,
 				17E0F5762794046100739A05 /* CoreDataProject.xcdatamodeld in Sources */,
-				17CFE972279585B20064A754 /* Movie+CoreDataClass.swift in Sources */,
-				17CFE973279585B20064A754 /* Movie+CoreDataProperties.swift in Sources */,
 				17E0F5732794041C00739A05 /* DataController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
