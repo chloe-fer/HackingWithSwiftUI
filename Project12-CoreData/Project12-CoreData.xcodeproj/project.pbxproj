@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		175DCD232796FD2D00C10C28 /* Singer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175DCD212796FD2D00C10C28 /* Singer+CoreDataClass.swift */; };
+		175DCD242796FD2D00C10C28 /* Singer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175DCD222796FD2D00C10C28 /* Singer+CoreDataProperties.swift */; };
+		175DCD262796FE1500C10C28 /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175DCD252796FE1500C10C28 /* FilteredList.swift */; };
 		17E0F565279403EF00739A05 /* Project12_CoreDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E0F564279403EF00739A05 /* Project12_CoreDataApp.swift */; };
 		17E0F567279403EF00739A05 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E0F566279403EF00739A05 /* ContentView.swift */; };
 		17E0F569279403F200739A05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E0F568279403F200739A05 /* Assets.xcassets */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		175DCD212796FD2D00C10C28 /* Singer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		175DCD222796FD2D00C10C28 /* Singer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		175DCD252796FE1500C10C28 /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
 		17E0F561279403EF00739A05 /* Project12-CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project12-CoreData.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E0F564279403EF00739A05 /* Project12_CoreDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project12_CoreDataApp.swift; sourceTree = "<group>"; };
 		17E0F566279403EF00739A05 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,8 +61,11 @@
 		17E0F563279403EF00739A05 /* Project12-CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				175DCD212796FD2D00C10C28 /* Singer+CoreDataClass.swift */,
+				175DCD222796FD2D00C10C28 /* Singer+CoreDataProperties.swift */,
 				17E0F564279403EF00739A05 /* Project12_CoreDataApp.swift */,
 				17E0F566279403EF00739A05 /* ContentView.swift */,
+				175DCD252796FE1500C10C28 /* FilteredList.swift */,
 				17E0F5722794041C00739A05 /* DataController.swift */,
 				17E0F5742794046100739A05 /* CoreDataProject.xcdatamodeld */,
 				17E0F568279403F200739A05 /* Assets.xcassets */,
@@ -144,9 +153,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				17E0F567279403EF00739A05 /* ContentView.swift in Sources */,
+				175DCD242796FD2D00C10C28 /* Singer+CoreDataProperties.swift in Sources */,
 				17E0F565279403EF00739A05 /* Project12_CoreDataApp.swift in Sources */,
+				175DCD232796FD2D00C10C28 /* Singer+CoreDataClass.swift in Sources */,
 				17E0F5762794046100739A05 /* CoreDataProject.xcdatamodeld in Sources */,
 				17E0F5732794041C00739A05 /* DataController.swift in Sources */,
+				175DCD262796FE1500C10C28 /* FilteredList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
